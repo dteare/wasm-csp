@@ -1,9 +1,15 @@
-Runs Google's [Fibonacci WebAssembly demo](https://webassembly.studio/?f=aakxyho2ho) within a chrome extension.
+Runs Google's [Fibonacci WebAssembly demo](https://webassembly.studio/?f=aakxyho2ho) within a chrome extension to demonstrate the effect of various [Content Security Policies](https://content-security-policy.com/).
 
 
-## Default CSP
+## Default
 
-Scripts running within the Chrome background page have a restrictive Content Security Policy by default. The `default-csp` folder contains an extension that uses the default csp and demonstrates that both `WebAssembly.instantiateStreaming` and `WebAssembly.compile` are prohibited.
+Scripts running within the Chrome background page have a restrictive the following Content Security Policy [by default]([https://developers.chrome.com/apps/contentSecurityPolicy](https://developers.chrome.com/extensions/contentSecurityPolicy#restrictions)):
+
+```
+script-src 'self'; object-src 'self'
+```
+
+The `default-csp` folder contains an extension that uses the default Chrome CSP and demonstrates that both `WebAssembly.instantiateStreaming` and `WebAssembly.compile` are prohibited.
 
 ```
 CompileError: WebAssembly.instantiateStreaming(): Wasm code generation disallowed by embedder
