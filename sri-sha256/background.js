@@ -1,4 +1,4 @@
-console.log("Hello, WASM!");
+console.log("Hello, WASM with sha256 CSP!");
 
 // This is our recommended way of loading WebAssembly.
 // https://developers.google.com/web/updates/2018/04/loading-wasm
